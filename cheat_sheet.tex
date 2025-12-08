@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+
+\newcommand{\comp}{\circ}
+\newcommand{\id}{\mathrm{id}}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\begin{document}
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{2.2}
+\setlength{\tabcolsep}{6pt}
+\section{Universal Constructions}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|l|c|c|}
+  \hline
+  
+Construction & Definition & Computation & Equality & Commutative Diagram \\ \hline
+Initial Object &
+$\frac{}{0 \xrightarrow{[]} A}$ &
+ &
+$\frac{f: 0 \to A}{f = []}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center)] 0 \arrow[r, "{[]}", dotted] \& A \end{tikzcd} \\ \hline
+Terminal Object &
+$\frac{A}{A \xrightarrow{\langle \rangle} 1}$ &
+ &
+$\frac{f: A \to 1}{f = \langle \rangle}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center)] A \arrow[r, "{\langle \rangle}", dotted] \& 1 \end{tikzcd} \\ \hline
+Products &
+$\frac{A \xrightarrow{f} X \quad A \xrightarrow{g} Y}{A \xrightarrow{\langle f,g \rangle} X \times Y}$ &
+\begin{tabular}{@{}l@{}}
+$\pi_1 \comp \langle f,g \rangle = f, \pi_2 \comp \langle f,g \rangle = g$ \\
+$\langle \pi_1, \pi_2 \rangle \comp h = h : A \to X \times Y$
+\end{tabular} &
+$\frac{\pi_1 \comp h = f : A \to X \quad \pi_2 \comp h = g : A \to Y}{h = \langle f,g \rangle : A \to X \times Y}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center), row sep=small, column sep=small]
+\& A \arrow[ld, "f"'] \arrow[rd, "g"] \arrow[d, "{\langle f,g \rangle}", dotted] \& \\
+X \& X \times Y \arrow[l, "\pi_1"] \arrow[r, "\pi_2"'] \& Y
+\end{tikzcd} \\ \hline
+Coproducts &
+$\frac{A \xrightarrow{f} X \quad B \xrightarrow{g} X}{A + B \xrightarrow{[f,g]} X}$ &
+\begin{tabular}{@{}l@{}}
+$[f,g] \comp \iota_1 = f, [f,g] \comp \iota_2 = g$ \\
+$[h \comp \iota_1, h \comp \iota_2] = h : A + B \to X$
+\end{tabular} &
+$\frac{h \comp \iota_1 = f : A \to X \quad h \comp \iota_2 = g : B \to X}{h = [f,g] : A + B \to X}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center), row sep=small, column sep=small]
+A \arrow[r, "\iota_1"] \arrow[rd, "f"'] \& A + B \arrow[d, "{[f,g]}", dotted] \& B \arrow[l, "\iota_2"'] \arrow[ld, "g"] \\
+\& X \&
+\end{tikzcd} \\ \hline
+Exponentials &
+$\frac{A \times X \xrightarrow{f} Y}{A \xrightarrow{\text{cur}f} X \Rightarrow Y}$ &
+\begin{tabular}{@{}l@{}}
+$\text{app} \comp (\text{cur}f \times \id_X) = f : A \times X \to Y$ \\
+$\text{cur}(\text{app} \comp (h \times \id_X)) = h : A \to X \Rightarrow Y$
+\end{tabular} &
+$\frac{\text{app} \comp (h \times \id_X) = f : A \times X \to Y}{h = \text{cur}f : A \to X \Rightarrow Y}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center), row sep=small, column sep=small]
+A \times X \arrow[rr, "{\text{cur}f \times \id}", dotted] \arrow[rd, "f"'] \& \& (X \Rightarrow Y) \times X \arrow[ld, "\text{app}"] \\
+\& Y \&
+\end{tikzcd} \\ \hline
+Free monoids &
+$\frac{X \xrightarrow{f} M \in \underline{\text{Set}}}{\underline{L}X \xrightarrow{f^\sharp}\underline{M} \in \underline{\text{Mon}}}$ &
+\begin{tabular}{@{}l@{}}
+$f^\sharp \comp s_X = f : X \to M$ \\
+$(g \comp s_X)^\sharp = g : \underline{L}X \to \underline{M}$
+\end{tabular} &
+$\frac{h \comp s_X = f : X \to M}{h = f^\sharp : \underline{L}X \to \underline{M}}$ &
+\begin{tikzcd}[ampersand replacement=\&, baseline=(current bounding box.center), row sep=small, column sep=small]
+X \arrow[r, "s_X"] \arrow[rd, "f"'] \& \underline{L}X \arrow[d, "f^\sharp", dotted] \\
+\& \underline{M}
+\end{tikzcd} \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\section{Categories}
+\section{Functors}
+\section{Natural Transformations}
+\section{Adjunctions}
+
+\end{document}
