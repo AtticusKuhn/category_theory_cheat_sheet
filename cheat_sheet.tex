@@ -78,9 +78,72 @@ X \arrow[r, "s_X"] \arrow[rd, "f"'] \& \underline{L}X \arrow[d, "f^\sharp", dott
 }
 \end{table}
 
+\section{Equational Reasoning Laws}
+
+\[f = \langle \rangle : X \to 1_C\]
+\[k = \langle f, g \rangle \iff (\pi_1 \circ k = f \land \pi_2 \circ k = g) : X \to Y \times Z\]
+\[\pi_1 \circ (f \times g) = f \circ \pi_1 : X \times Y \to X_2\]
+\[\pi_2 \circ (f \times g) = g \circ \pi_2 : X \times Y \to Y_2\]
+\[\langle \pi_1, \pi_2, \rangle = id_{X \times Y} : X \times Y \to X \times Y\]
+\[id_X \times id_Y = id_{X \times Y} : X \times Y \to X \times Y\]
+\[(h \times k) \circ (f \times g) = (h \circ f) \times (k \circ g) : X_1 \times Y_1 \to X_3 \times Y_3\]
+\[f = g \iff cur(f) = cur(g)\]
+\[(g = cur(f)) \iff f = app \circ (g \times id)\]
+\[cur(app) = id_{X \implies Y} : X \implies Y \to X \implies Y \]
+\[\langle g_1, g_2 \rangle \circ f = \langle g_1 \circ f , g_2 \circ f \rangle\]
+\[(f_1 \times f_2) \circ \langle g_1 , g_2 \rangle = \langle f_1 \circ g_1, f_2 \circ g_2 \rangle\]
+
+
+
+\[u : X \to Y, g : F(Y) \to Z, v : Z \to W\]
+\[\theta_{X, W}(v \circ g \circ F(u)) = G(v) \circ \theta_{Y,Z}(g) \circ u\]
+\[\theta_{X, W}(g \circ F(u)) = \theta_{Y,Z}(g) \circ u\]
+\[\theta_{X, W}(v \circ g) = G(v) \circ \theta_{Y,Z}(g)\]
+
+\[u : X \to Y, g : Y \to G(Z), v : Z \to W\]
+\[\theta^{-1}_{X, W}(G(v) \circ g \circ u) = v \circ \theta^{-1}_{Y,Z}(g) \circ F(u)\]
+\[\theta^{-1}_{X, W}(g \circ u) = \theta^{-1}_{Y,Z}(g) \circ F(u)\]
+\[\theta^{-1}_{X, W}(G(v) \circ g) = v \circ \theta^{-1}_{Y,Z}(g)\]
+
+
 \section{Categories}
 \section{Functors}
 \section{Natural Transformations}
+\[\eta : Id_C \to GF\]
+\[ \eta_X = \theta_{X, FX}(id_{FX}) \]
+
+\[\varepsilon : FG \to Id_D\]
+\[\varepsilon_X = \theta^{-1}_{GX, X}(id_{GX}) \]
+
+\[\theta(f : A \to G(B)) = \varepsilon_B \circ F(f) : F(A) \to B\]
+\[\theta^{-1}(g : F(A) \to B) = G(g) \circ \eta_A : A \to G(B)\]
+\subsection{Triangle Identity}
+\[\varepsilon_F \circ F\eta = id_F\]
+\[G\varepsilon \circ \eta_G = id_G\]
+
 \section{Adjunctions}
+\section{cartesian closed structure}
+\section{left and right adjoints}
+\section{dependent products and functions}
+\section{exponentials in presheaf categories}
+
+\subsection{Presheave category}
+Objects: contravariant functors \[P : C^{op} \to Set\]
+Arrows: natural transformations
+
+\subsubsection{Exponential Object}
+$$(G^F)(U) \cong \text{Nat}(F \times \text{Hom}(-, U), G)$$
+Action on objects: $$(Y^X)(C) = \text{Nat}(\mathbf{y}(C) \times X, Y)$$
+Action on arrows:
+$$ (Y^X)(f): (Y^X)(C) \to (Y^X)(C') $$
+\[ (Y^X)(f)(\phi)_W(g, x) = \phi_w(f \circ g, x)$\]
+Yoneda Functor:
+\[Y : C \to Set^{C^{op}}\]
+\[Y(A : C) = \mathbb{C}(\cdot, A)\]
+
+Yoneda Lemma:
+\[Set^{C^{op}}(Y(X), P) \equiv P(X)\]
+Where
+\[P : C^{op} \to Set\]
 
 \end{document}

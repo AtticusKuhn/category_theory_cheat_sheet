@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765236692.3568 "cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1765236692.78611 0
+["pdflatex"] 1766743355.74261 "cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1766743356.20581 0
   "/home/atticusk/texmf/tex/latex/commonstuff/tikz-cd/tikz-cd.sty" 1620511218 823 2375f30bf77af9357d3b4834b054bf52 ""
   "/home/atticusk/texmf/tex/latex/commonstuff/tikz-cd/tikzlibrarycd.code.tex" 1620511218 23059 b4b98da760150611227e2533f15fe352 ""
   "/nix/store/pj20rvyjqi6xicr3vbsn32558jv7v6ci-texlive-combined-2025/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1 366553 161c02edac23dde35b87f882b2f882de ""
@@ -131,8 +131,8 @@
   "/nix/store/vxjf1cn928aiab6f6rx5pggiyxg861hl-texlive-combined-2025-texmfdist/tex/latex/pgf/utilities/pgfkeys.sty" 1 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "/nix/store/vxjf1cn928aiab6f6rx5pggiyxg861hl-texlive-combined-2025-texmfdist/tex/latex/pgf/utilities/pgfrcs.sty" 1 325 f9f16d12354225b7dd52a3321f085955 ""
   "/nix/store/vxjf1cn928aiab6f6rx5pggiyxg861hl-texlive-combined-2025-texmfdist/tex/latex/xcolor/xcolor.sty" 1 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "cheat_sheet.aux" 1765236692.73794 547 afb989c0bbc6dcb844973e9c5181a35a "pdflatex"
-  "cheat_sheet.tex" 1765236688.08559 3791 24f6d5248db745745af5053f29b50673 ""
+  "cheat_sheet.aux" 1766743356.14024 1129 93d37e50d485065fdd1429e08f926502 "pdflatex"
+  "cheat_sheet.tex" 1766743353.79235 5622 8b8797175fd8aae521f85417abeac532 ""
   (generated)
   "cheat_sheet.aux"
   "cheat_sheet.log"
